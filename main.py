@@ -40,7 +40,7 @@ class Img:
         new_entry.insert(0, self.new_filename)
 
     def save_image(self):
-        self.image.save(self.new_filename)
+        self.image.save(new_entry.get())
         browse_entry.config(state="normal")
         browse_entry.delete(0, tk.END)
         browse_entry.config(state="disabled")

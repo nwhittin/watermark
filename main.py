@@ -3,6 +3,7 @@ from tkinter import filedialog
 from PIL import Image, ImageDraw
 
 WATERMARK = "test"
+IMG_EXTS = ".png .jpeg .jpg"
 image = None
 
 
@@ -11,7 +12,7 @@ def browse_files():
     filename = filedialog.askopenfilename(
         initialdir="/",
         title="Select a file",
-        filetypes=(("JPEG", ".jpg"), ("all files", "*.*"))
+        filetypes=(("Image Files", IMG_EXTS), ("all files", "*.*"))
     )
     image = Img(filename)
 
@@ -78,6 +79,6 @@ new_entry.grid(row=1, column=1)
 preview_button = tk.Button(width=20, text="Preview", state="disabled", command=preview_image)
 preview_button.grid(row=1, column=2)
 save_button = tk.Button(width=20, text="Save", state="disabled", command=save_image)
-save_button.grid(row=2, column=1)
+save_button.grid(row=3, column=1)
 
 window.mainloop()
